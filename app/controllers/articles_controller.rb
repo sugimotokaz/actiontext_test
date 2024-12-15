@@ -9,7 +9,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.build(article_params)
+    @article = current_user.articles.build(article_params)
     if @article.save
       redirect_to articles_path
     else
@@ -22,11 +22,11 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-    @article = Article.find(params[:id])
+    @article = current_user.articles.find(params[:id])
   end
 
   def update
-    @article = Article.find(params[:id])
+    @article = current_user.articles.find(params[:id])
     if @article.update(article_params)
       redirect_to articles_path
     else
