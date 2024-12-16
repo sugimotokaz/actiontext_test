@@ -9,4 +9,5 @@
     <h1 class="ml-4"><%= @article.content %></h1>
   </div>
   <%= link_to "編集", edit_article_path(@article), class: "btn btn-neutral mt-8" %>
+  <%= link_to "削除", article_path(@article), data: { turbo_method: :delete, turbo_confirm: "本当に削除しますか？" }, class: 'btn btn-outline btn-accent' %>
 </div>
