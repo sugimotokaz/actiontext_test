@@ -29,3 +29,43 @@
   padding: 0 !important;
   max-width: 100% !important;
 }
+
+/* ツールバーが折り返すように設定 */
+trix-toolbar {
+  .trix-button-row {
+    flex-wrap: wrap;
+    justify-content: start;
+  }
+  .trix-button-group:not(:first-child) {
+    margin-left: 0;
+  }
+  .trix-button-group {
+    margin-right: 1.5vw;
+  }
+}
+
+/* テキストエディタ部分の設定　スクロールできるように設定 */
+trix-editor {
+  min-height: 40em;
+  max-height: 40em;
+  overflow-y: auto;
+}
+
+.trix-content ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+.trix-content ol {
+  list-style-type: decimal;
+  margin-left: 20px;
+}
+
+.trix-content img {
+  max-width: 50%; /* 親要素の幅に収まる */
+  min-height: 50%;    /* アスペクト比を保つ */
+  display: block;
+  margin: 0 auto; /* 左右の余白を自動で設定 */
+}
+
+
